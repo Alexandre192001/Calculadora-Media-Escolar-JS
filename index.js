@@ -1,9 +1,10 @@
 function escola(){
-  let options
-  while(options!=1 && options!=2){
-    prompt("Escolha uma das opções:\n" + 
+  let options;
+  while(options!="1" && options!="2" && options!="3"){
+  options = prompt("Escolha uma das opções:\n" + 
     "1 - Média Bimestral \n" +
-    "2 - Média Anual" )
+    "2 - Média Anual \n" + 
+    "3 - Finalizar Programa" )
   }
   return options
 }
@@ -14,16 +15,15 @@ function mediaBimestral(){
   const media = (Number(nota1)+Number(nota2))/2;
   console.log(media)
   if(media<6){
-    alert("Aluno Reprovado no bimestre!")
+    alert(`Aluno Reprovado no bimestre com média de ${media}!`)
   } 
   else if(media<10){
-    alert("Aluno Aprovado no bimestre")
+  alert(`Aluno Aprovado no bimestre com média de ${media}`)
   } 
   if(media==10){
-    alert("Aluno aprovado com nota maxima no bimestre")
+    alert(`Aluno aprovado com nota maxima no bimestre com média de ${media}`)
   }
 
-  escola()
 }
 
 function mediaAnual(){
@@ -34,16 +34,27 @@ function mediaAnual(){
   const media = (Number(nota1)+Number(nota2)+Number(nota3)+Number(nota4))/4;
   console.log(media)
   if(media<6){
-    alert("Aluno Reprovado")
+    alert(`Aluno Reprovado com média de ${media}`)
   } 
   else if(media<10){
-    alert("Aluno Aprovado")
+    alert(`Aluno Aprovado com média de ${media}`)
   } 
   if(media==10){
-    alert("Aluno aprovado com nota maxima")
+    alert(`Aluno aprovado com nota maxima - ${media}`)
   }
-  escola()
 }
 
-mediaAnual()
+switch(escola()){
+  case "1":
+    mediaBimestral()
+    escola()
+    break
+  case "2":
+    mediaAnual()
+    escola()
+  default:
+    alert("Programa Finalizado")
+    break
+}
+
 
