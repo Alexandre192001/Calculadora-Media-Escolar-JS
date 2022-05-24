@@ -1,6 +1,6 @@
 function escola(){
   let options;
-  while(options!="1" && options!="2" && options!="3"){
+  while(options!=1 && options!=2 && options!=3){
   options = prompt("Escolha uma das opções:\n" + 
     "1 - Média Bimestral \n" +
     "2 - Média Anual \n" + 
@@ -44,14 +44,15 @@ function mediaAnual(){
   }
 }
 
-switch(escola()){
-  case "1":
+let optionEscola =Number(escola())
+
+switch(optionEscola){
+  case 1:
     mediaBimestral()
-    escola()
     break
-  case "2":
+  case 2:
     mediaAnual()
-    escola()
+    break
   default:
     alert("Programa Finalizado")
     break
