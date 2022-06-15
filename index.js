@@ -44,18 +44,29 @@ function mediaAnual(){
   }
 }
 
-let optionEscola =Number(escola())
+let valor = escola.value
 
-switch(optionEscola){
-  case 1:
-    mediaBimestral()
-    break
-  case 2:
-    mediaAnual()
-    break
-  default:
-    alert("Programa Finalizado")
-    break
+while(valor!="3"){
+  let valorOption = escola()
+
+  switch(valorOption){
+    case "1":
+      mediaBimestral()
+      break
+    case "2":
+      mediaAnual()
+      break
+
+    case "3":
+      alert("Programa finalizado")
+      remove(escola())
+      break
+
+    default:
+      alert("Opção Invalida")
+      break
+  }
+  
 }
 
 
