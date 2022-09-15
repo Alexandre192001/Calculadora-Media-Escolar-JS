@@ -23,7 +23,6 @@ function mediaBimestral(){
   if(media==10){
     alert(`Aluno aprovado com nota maxima no bimestre com média de ${media}`)
   }
-
 }
 
 function mediaAnual(){
